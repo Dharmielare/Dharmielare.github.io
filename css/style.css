@@ -20,7 +20,7 @@ img{
 }
 
 .layout_padding2-bottom {
-  padding-bottom: 45px;
+  padding-bottom: 100px;
 }
 
 .layout_padding-top {
@@ -67,6 +67,18 @@ img{
   text-align: center;
 }
 
+.carousel-head{
+  color:white;
+  font-size: 80px;
+
+}
+
+.carousel-para{
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
 h1,
 h2 {
   font-family: 'Merriweather Sans', sans-serif;
@@ -83,7 +95,8 @@ h2 {
 }
 
 .header_bottom{
-  background-color: #0353cc1a;
+  background-color: orange;
+  padding-bottom: 20px;
 }
 
 a,
@@ -497,10 +510,22 @@ a:focus {
 
 .service_section {
   position: relative;
+  
+  
+  
 }
 
+.b-service{
+  background-color: #0355cc;
+  color: #fff;
+  padding: 5px;
+  border: #fff;
+  font-weight: bold;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 .service_section .box {
-  margin-top: 30px;
+ 
   text-align: center;
   -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
           box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.15);
@@ -517,6 +542,7 @@ a:focus {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+          
 }
 
 .service_section .box .img-box {
@@ -587,6 +613,12 @@ a:focus {
   background-color: transparent;
   color: #0355cc;
 }
+
+/* .client_section{
+  position: relative;
+  
+  bottom: 70px;
+} */
 
 .client_section .heading_container {
   -webkit-box-align: center;
@@ -669,6 +701,14 @@ a:focus {
 .heading_container {
   margin-bottom: 30px;
 }
+/* .contact_section{
+  position: relative;
+  bottom: 250px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  
+
+}  */
 
 .contact_section input {
   width: 100%;
