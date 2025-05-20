@@ -11,7 +11,6 @@
   <meta name="keywords" content="Halsey J Limited, Nigerian company, about, history, values, consulting" />
   <meta name="description" content="Learn about Halsey J Limited - A proudly indigenous Nigerian company delivering world-class services since 2003." />
   <meta name="author" content="Halsey J Limited" />
-
   <style>
     /*--------------------------------------------------------------
 # About Page Specific Styles
@@ -76,13 +75,14 @@ body {
 --------------------------------------------------------------*/
 .about-hero {
   position: relative;
-  height: 500px;
-  background-image: url("https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   margin-top: 76px;
+  overflow: hidden;
 }
 
 .about-hero-overlay {
@@ -91,24 +91,51 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+  background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 68, 148, 0.9));
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .about-hero-title {
-  color: #fff;
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
   font-family: "Playfair Display", serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .about-hero-subtitle {
-  color: rgba(255, 255, 255, 0.9);
   font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.about-hero-btn {
+  margin-top: 20px;
+}
+
+.wave-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
   position: relative;
-  z-index: 1;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
 }
 
 /*--------------------------------------------------------------
@@ -178,6 +205,88 @@ body {
 }
 
 /*--------------------------------------------------------------
+# Timeline Section
+--------------------------------------------------------------*/
+.timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.timeline-content {
+  width: 45%;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 55%;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 55%;
+}
+
+.timeline-year {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.timeline-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.timeline-text {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
 # Core Values Section
 --------------------------------------------------------------*/
 .value-card {
@@ -243,6 +352,110 @@ body {
 .value-description {
   color: var(--gray-color);
   font-size: 0.95rem;
+}
+
+/*--------------------------------------------------------------
+# Team Section
+--------------------------------------------------------------*/
+.team-card {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 30px;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+}
+
+.team-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.1);
+}
+
+.team-social {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 68, 148, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.team-card:hover .team-social {
+  opacity: 1;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: var(--transition);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.team-card:hover .social-link {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.team-card:hover .social-link:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.team-card:hover .social-link:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.team-card:hover .social-link:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.social-link:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+.team-content {
+  padding: 20px;
+  text-align: center;
+}
+
+.team-name {
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: var(--dark-color);
+}
+
+.team-position {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+  margin-bottom: 0;
 }
 
 /*--------------------------------------------------------------
@@ -336,6 +549,71 @@ body {
 }
 
 /*--------------------------------------------------------------
+# Subsidiary Values Section
+--------------------------------------------------------------*/
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.value-item {
+  height: 100%;
+}
+
+.value-item-inner {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.value-item:hover .value-item-inner {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-item-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 86, 179, 0.1);
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.value-item:hover .value-item-icon {
+  background-color: var(--primary-color);
+}
+
+.value-item-icon i {
+  font-size: 28px;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.value-item:hover .value-item-icon i {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.value-item-title {
+  margin-bottom: 15px;
+  font-size: 1.25rem;
+}
+
+.value-item-text {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+}
+
+/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .service-box {
@@ -396,7 +674,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(65, 61, 62, 0.85), rgba(17, 17, 16, 0.95));
+  background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 68, 148, 0.95));
 }
 
 .impact-title {
@@ -447,6 +725,88 @@ body {
 }
 
 /*--------------------------------------------------------------
+# Client Logo Section
+--------------------------------------------------------------*/
+.logo-slider {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-item {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.logo-item:hover {
+  transform: translateY(-5px);
+}
+
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: var(--transition);
+}
+
+.logo-item:hover img {
+  filter: grayscale(0);
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# CTA Section
+--------------------------------------------------------------*/
+.cta-section {
+  position: relative;
+  padding: 100px 0;
+  background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 68, 148, 0.95));
+}
+
+.cta-title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+}
+
+.cta-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-buttons {
+  position: relative;
+  z-index: 1;
+}
+
+/*--------------------------------------------------------------
 # Responsive Styles
 --------------------------------------------------------------*/
 @media (max-width: 991px) {
@@ -458,12 +818,12 @@ body {
     font-size: 2rem;
   }
 
-  .about-hero-title {
-    font-size: 3rem;
+  .about-hero {
+    height: 500px;
   }
 
-  .about-hero {
-    height: 400px;
+  .about-hero-title {
+    font-size: 3rem;
   }
 
   .overview-content,
@@ -487,6 +847,33 @@ body {
   .experience-badge .text {
     font-size: 0.8rem;
   }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    justify-content: flex-start;
+  }
+
+  .timeline-dot {
+    left: 20px;
+  }
+
+  .timeline-content {
+    width: calc(100% - 50px);
+    margin-left: 50px !important;
+    margin-right: 0 !important;
+  }
+
+  .mission-card,
+  .vision-card {
+    padding: 30px;
+  }
+
+  .values-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
 }
 
 @media (max-width: 767px) {
@@ -507,7 +894,7 @@ body {
   }
 
   .about-hero {
-    height: 350px;
+    height: 400px;
   }
 
   .experience-badge {
@@ -525,9 +912,22 @@ body {
     font-size: 0.7rem;
   }
 
-  .mission-card,
-  .vision-card {
-    padding: 30px;
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .cta-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-buttons .btn.me-3 {
+    margin-right: 0 !important;
   }
 }
 
@@ -552,7 +952,7 @@ body {
   
   <!-- Custom styles -->
   <link href="css/style.css" rel="stylesheet" />
-  <link href="css/about-tyle.css" rel="stylesheet" />
+  <link href="css/about-style.css" rel="stylesheet" />
   
   <!-- Favicon -->
   <link rel="icon" href="images/hasley_logo-removebg-preview (1).png" type="image/png">
@@ -598,18 +998,26 @@ body {
     <div class="about-hero-overlay"></div>
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 text-center">
-          <h1 class="about-hero-title" data-aos="fade-up" data-aos-duration="1000">Our Story</h1>
-          <div class="about-hero-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
-            Two decades of excellence, innovation, and reliability
+        <div class="col-lg-12">
+          <div class="about-hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="about-hero-title">About Us</h1>
+            <p class="about-hero-subtitle">Delivering excellence since 2003</p>
+            <div class="about-hero-btn">
+              <a href="#company-overview" class="btn btn-primary btn-lg">Discover Our Story</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="wave-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
   </section>
 
   <!-- Company Overview Section -->
-  <section class="company-overview section-padding">
+  <section class="company-overview section-padding" id="company-overview">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
@@ -644,8 +1052,89 @@ body {
     </div>
   </section>
 
+  <!-- Timeline Section -->
+  <section class="timeline-section section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Our Journey</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            The key milestones that have shaped our company's growth and success
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="timeline">
+            <!-- Milestone 1 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2003</div>
+                <h3 class="timeline-title">Company Founded</h3>
+                <p class="timeline-text">
+                  Halsey J Limited was established as an indigenous Nigerian company with a vision to deliver exceptional services across various sectors.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Milestone 2 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2008</div>
+                <h3 class="timeline-title">Expansion of Services</h3>
+                <p class="timeline-text">
+                  We expanded our service offerings to include environmental beautification, landscaping, and corporate cleaning services.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Milestone 3 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2013</div>
+                <h3 class="timeline-title">10th Anniversary</h3>
+                <p class="timeline-text">
+                  Celebrated a decade of excellence with over 100 successful projects and a growing team of dedicated professionals.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Milestone 4 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2018</div>
+                <h3 class="timeline-title">Launch of Halsey Consulting</h3>
+                <p class="timeline-text">
+                  Established Halsey Consulting and Services as a subsidiary focused on innovative tech solutions and IT consulting.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Milestone 5 -->
+            <div class="timeline-item" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-year">2023</div>
+                <h3 class="timeline-title">20th Anniversary</h3>
+                <p class="timeline-text">
+                  Marked two decades of excellence, innovation, and client satisfaction with a renewed commitment to delivering world-class services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Core Values Section -->
-  <section class="core-values section-padding bg-light">
+  <section class="core-values section-padding">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
@@ -739,6 +1228,95 @@ body {
     </div>
   </section>
 
+  <!-- Team Section -->
+  <section class="team-section section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Our Leadership Team</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Meet the dedicated professionals who guide our company's vision and success
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <!-- Team Member 1 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team Member" class="img-fluid">
+              <div class="team-social">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">John Adeyemi</h3>
+              <p class="team-position">Chief Executive Officer</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 2 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team Member" class="img-fluid">
+              <div class="team-social">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">Sarah Okonkwo</h3>
+              <p class="team-position">Chief Operations Officer</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 3 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Team Member" class="img-fluid">
+              <div class="team-social">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">Michael Eze</h3>
+              <p class="team-position">Chief Technology Officer</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Team Member 4 -->
+        <div class="col-lg-3 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="team-card">
+            <div class="team-image">
+              <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Team Member" class="img-fluid">
+              <div class="team-social">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+              </div>
+            </div>
+            <div class="team-content">
+              <h3 class="team-name">Amina Ibrahim</h3>
+              <p class="team-position">Chief Financial Officer</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Subsidiary Section -->
   <section class="subsidiary-section section-padding">
     <div class="container">
@@ -798,8 +1376,94 @@ body {
     </div>
   </section>
 
+  <!-- Subsidiary Values Section -->
+  <section class="subsidiary-values-section section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Halsey Consulting Core Values</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            The principles that guide our technology and consulting services
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="values-grid">
+            <!-- Value 1 -->
+            <div class="value-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+              <div class="value-item-inner">
+                <div class="value-item-icon">
+                  <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="value-item-title">Innovation</h3>
+                <p class="value-item-text">
+                  At the heart of everything we do is a relentless commitment to innovation. We believe that every problem is an opportunity for creative, technological solutions.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Value 2 -->
+            <div class="value-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+              <div class="value-item-inner">
+                <div class="value-item-icon">
+                  <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3 class="value-item-title">Collaboration</h3>
+                <p class="value-item-text">
+                  We believe in working closely with our clients to understand their needs and provide solutions that are tailor-made for their unique challenges.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Value 3 -->
+            <div class="value-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+              <div class="value-item-inner">
+                <div class="value-item-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="value-item-title">Integrity</h3>
+                <p class="value-item-text">
+                  Our approach is rooted in honesty and transparency. We maintain the highest ethical standards in every project we undertake.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Value 4 -->
+            <div class="value-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
+              <div class="value-item-inner">
+                <div class="value-item-icon">
+                  <i class="fas fa-award"></i>
+                </div>
+                <h3 class="value-item-title">Excellence</h3>
+                <p class="value-item-text">
+                  We aim for excellence in every aspect of our service, ensuring that the solutions we provide are of the highest quality and deliver measurable results.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Value 5 -->
+            <div class="value-item" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="500">
+              <div class="value-item-inner">
+                <div class="value-item-icon">
+                  <i class="fas fa-user-check"></i>
+                </div>
+                <h3 class="value-item-title">Customer-Centricity</h3>
+                <p class="value-item-text">
+                  We focus on creating value for our clients, ensuring that our solutions are designed with their specific needs and goals in mind.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Services Section -->
-  <section class="services-section section-padding">
+  <section class="services-section section-padding bg-light">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
@@ -898,14 +1562,14 @@ body {
           <p class="impact-text">
             At Halsey Consulting and Services, we don't just implement solutions – we transform businesses. Our innovative IT solutions have helped organizations across various sectors improve their operations, streamline workflows, and achieve their business objectives. By focusing on technology-driven innovation, we ensure that our clients are always one step ahead in a constantly evolving digital landscape.
           </p>
-          <!-- <a href="contact.html" class="btn btn-light btn-lg mt-4">Work With Us</a> -->
+          <a href="contact.html" class="btn btn-light btn-lg mt-4">Work With Us</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Counter Section -->
-  <!-- <section class="counter-section section-padding">
+  <section class="counter-section section-padding">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-aos="fade-up" data-aos-duration="800">
@@ -949,18 +1613,77 @@ body {
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
+
+  <!-- Client Logo Section -->
+  <section class="client-logo-section section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Our Clients</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Trusted by leading organizations across various industries
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-12">
+          <div class="logo-slider" data-aos="fade-up" data-aos-duration="1000">
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+1" alt="Client Logo" class="img-fluid">
+            </div>
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+2" alt="Client Logo" class="img-fluid">
+            </div>
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+3" alt="Client Logo" class="img-fluid">
+            </div>
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+4" alt="Client Logo" class="img-fluid">
+            </div>
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+5" alt="Client Logo" class="img-fluid">
+            </div>
+            <div class="logo-item">
+              <img src="https://via.placeholder.com/150x80?text=Client+6" alt="Client Logo" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="cta-title">Ready to Work With Us?</h2>
+          <p class="cta-text">
+            Contact us today to discuss how our services can benefit your business. Our team is ready to provide the solutions you need.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary btn-lg me-3">Contact Us</a>
+            <a href="service.html" class="btn btn-outline-light btn-lg">Our Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Info Section -->
-  <!-- <section class="info-section">
+  <section class="info-section">
     <div class="container">
       <h4 class="info-title" data-aos="fade-up" data-aos-duration="800">Get In Touch</h4>
       <div class="row">
         <div class="col-lg-10 mx-auto">
           <div class="info-items">
-            <div class="row"> -->
+            <div class="row">
               <!-- Address -->
-              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
                 <div class="info-item">
                   <div class="info-icon">
                     <i class="fas fa-map-marker-alt"></i>
@@ -972,10 +1695,10 @@ body {
                     </p>
                   </div>
                 </div>
-              </div> -->
+              </div>
               
               <!-- Phone -->
-              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
                 <div class="info-item">
                   <div class="info-icon">
                     <i class="fas fa-phone-alt"></i>
@@ -986,10 +1709,10 @@ body {
                     </p>
                   </div>
                 </div>
-              </div> -->
+              </div>
               
               <!-- Email -->
-              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+              <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
                 <div class="info-item">
                   <div class="info-icon">
                     <i class="fas fa-envelope"></i>
@@ -1005,10 +1728,10 @@ body {
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
     
     <!-- Social Media -->
-    <!-- <div class="social-box" data-aos="fade-up" data-aos-duration="800">
+    <div class="social-box" data-aos="fade-up" data-aos-duration="800">
       <h4>Follow Us</h4>
       <div class="social-icons">
         <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
@@ -1016,10 +1739,11 @@ body {
         <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
-    </div> -->
-  <!-- </section> -->
+    </div>
+  </section>
 
- <footer class="footer-section">
+  <!-- Footer Section -->
+  <footer class="footer-section">
     <div class="container">
       <p>
         &copy; <span id="displayDateYear"></span> All Rights Reserved By
@@ -1039,160 +1763,185 @@ body {
   <!-- AOS Animation Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   
+  <!-- Slick Slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
   <script src="js/about.js"></script>
+
   <script>
-    // Import necessary libraries
-const AOS = window.AOS
-const $ = window.$
+    // Import AOS Animation Library
+import AOS from "aos"
+import "aos/dist/aos.css"
+import $ from "jquery"
+import "slick-carousel/slick/slick"
 
 // Initialize AOS Animation Library
-AOS.init({
-  duration: 1000,
-  once: true,
-  mirror: false,
-})
-
-// Initialize Owl Carousel for Testimonials
-$(document).ready(() => {
-  $(".testimonial-slider").owlCarousel({
-    loop: true,
-    margin: 30,
-    nav: true,
-    dots: true,
-    autoplay: true,
-    autoplayTimeout: 5000,
-    autoplayHoverPause: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 3,
-      },
-    },
-    navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize AOS
+  AOS.init({
+    duration: 1000,
+    once: true,
+    mirror: false,
   })
 
-  // Sticky Header
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 100) {
-      $(".header").addClass("header-scrolled")
-    } else {
-      $(".header").removeClass("header-scrolled")
+  // Counter Animation
+  const counters = document.querySelectorAll(".counter-number")
+  const speed = 200 // The lower the slower
+
+  counters.forEach((counter) => {
+    const updateCount = () => {
+      const target = +counter.getAttribute("data-count")
+      const count = +counter.innerText
+
+      // Lower inc to slow and higher to speed up
+      const inc = target / speed
+
+      if (count < target) {
+        // Add inc to count and output in counter
+        counter.innerText = Math.ceil(count + inc)
+        // Call function every ms
+        setTimeout(updateCount, 30)
+      } else {
+        counter.innerText = target
+      }
     }
+
+    // Run the function when it comes into view
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            updateCount()
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    counterObserver.observe(counter)
   })
 
-  // Smooth scrolling for anchor links
-  $('a[href*="#"]:not([href="#"])').click(function () {
-    if (
-      location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") &&
-      location.hostname == this.hostname
-    ) {
-      var target = $(this.hash)
-      target = target.length ? target : $("[name=" + this.hash.slice(1) + "]")
-      if (target.length) {
-        $("html, body").animate(
-          {
-            scrollTop: target.offset().top - 80,
-          },
-          1000,
-        )
-        return false
+  // Initialize Logo Slider
+  $(".logo-slider").slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  })
+
+  // Parallax effect for impact section
+  window.addEventListener("scroll", () => {
+    const impactSection = document.querySelector(".impact-section")
+    if (impactSection) {
+      const scrollPosition = window.pageYOffset
+      const sectionPosition = impactSection.offsetTop
+      const sectionHeight = impactSection.offsetHeight
+
+      if (scrollPosition > sectionPosition - window.innerHeight && scrollPosition < sectionPosition + sectionHeight) {
+        const yPos = -(scrollPosition - sectionPosition) / 5
+        impactSection.style.backgroundPosition = `center ${yPos}px`
       }
     }
   })
 
-  // Set active class to nav-item based on current page
-  const currentLocation = location.pathname
-  const navItems = document.querySelectorAll(".nav-link")
+  // Parallax effect for CTA section
+  window.addEventListener("scroll", () => {
+    const ctaSection = document.querySelector(".cta-section")
+    if (ctaSection) {
+      const scrollPosition = window.pageYOffset
+      const sectionPosition = ctaSection.offsetTop
+      const sectionHeight = ctaSection.offsetHeight
 
-  navItems.forEach((item) => {
-    if (
-      item.getAttribute("href") === currentLocation ||
-      (currentLocation === "/" && item.getAttribute("href") === "index.html")
-    ) {
-      item.parentElement.classList.add("active")
+      if (scrollPosition > sectionPosition - window.innerHeight && scrollPosition < sectionPosition + sectionHeight) {
+        const yPos = -(scrollPosition - sectionPosition) / 5
+        ctaSection.style.backgroundPosition = `center ${yPos}px`
+      }
     }
+  })
+
+  // Add hover effect to value cards
+  const valueCards = document.querySelectorAll(".value-card")
+
+  valueCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      const icon = this.querySelector(".value-icon i")
+      icon.classList.add("fa-beat")
+
+      setTimeout(() => {
+        icon.classList.remove("fa-beat")
+      }, 1000)
+    })
+  })
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      const targetId = this.getAttribute("href")
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        const headerHeight = document.querySelector(".header").offsetHeight
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        })
+      }
+    })
+  })
+
+  // Add hover effect to service boxes
+  const serviceBoxes = document.querySelectorAll(".service-box")
+
+  serviceBoxes.forEach((box) => {
+    box.addEventListener("mouseenter", function () {
+      const icon = this.querySelector(".service-icon i")
+      icon.style.transition = "transform 0.6s ease"
+      icon.style.transform = "rotateY(360deg)"
+    })
+
+    box.addEventListener("mouseleave", function () {
+      const icon = this.querySelector(".service-icon i")
+      icon.style.transition = "none"
+      icon.style.transform = "rotateY(0)"
+    })
   })
 
   // Display current year in footer
   document.getElementById("displayDateYear").textContent = new Date().getFullYear()
-
-  // Form submission with animation
-  $("#contactForm").submit((e) => {
-    e.preventDefault()
-
-    // Add animation class to button
-    $(".submit-btn").addClass("sending")
-    $(".submit-btn").html('<i class="fas fa-spinner fa-spin"></i> Sending...')
-
-    // Simulate form submission (replace with actual form submission)
-    setTimeout(() => {
-      $(".submit-btn").removeClass("sending")
-      $(".submit-btn").html('<i class="fas fa-check"></i> Message Sent!')
-      $("#contactForm")[0].reset()
-
-      setTimeout(() => {
-        $(".submit-btn").html('SEND MESSAGE <i class="fas fa-paper-plane ms-2"></i>')
-      }, 3000)
-    }, 2000)
-  })
-
-  // Service card hover effect
-  $(".service-card").hover(
-    function () {
-      $(this).find(".service-icon img").css("transform", "rotate(360deg)")
-    },
-    function () {
-      $(this).find(".service-icon img").css("transform", "rotate(0deg)")
-    },
-  )
-
-  // Add animation to elements when they come into view
-  const animateElements = document.querySelectorAll(".animate-on-scroll")
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animated")
-        }
-      })
-    },
-    { threshold: 0.1 },
-  )
-
-  animateElements.forEach((element) => {
-    observer.observe(element)
-  })
-})
-
-// Additional animations for carousel
-document.addEventListener("DOMContentLoaded", () => {
-  // Add parallax effect to carousel
-  const carousel = document.getElementById("header-carousel")
-
-  if (carousel) {
-    const carouselItems = carousel.querySelectorAll(".carousel-item")
-
-    carouselItems.forEach((item) => {
-      const img = item.querySelector("img")
-
-      if (img) {
-        window.addEventListener("scroll", () => {
-          const scrollPosition = window.scrollY
-          if (scrollPosition < window.innerHeight) {
-            img.style.transform = `translateY(${scrollPosition * 0.4}px)`
-          }
-        })
-      }
-    })
-  }
 })
 
   </script>

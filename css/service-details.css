@@ -1,0 +1,580 @@
+/*--------------------------------------------------------------
+# Service Details Page Specific Styles
+--------------------------------------------------------------*/
+:root {
+  --primary-color: #0056b3;
+  --secondary-color: #ff6b00;
+  --primary-dark: #004494;
+  --primary-light: #e6f0ff;
+  --text-color: #333333;
+  --text-light: #666666;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --border-color: #e9ecef;
+  --white: #ffffff;
+  --black: #000000;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
+
+/*--------------------------------------------------------------
+# Page Banner
+--------------------------------------------------------------*/
+.page-banner {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  margin-top: 90px;
+  overflow: hidden;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 86, 179, 0.8), rgba(0, 68, 148, 0.9));
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--white);
+}
+
+.banner-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.breadcrumb-wrapper {
+  display: inline-block;
+}
+
+.breadcrumb {
+  background-color: transparent;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.breadcrumb-item {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.breadcrumb-item a {
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition);
+}
+
+.breadcrumb-item a:hover {
+  color: var(--white);
+}
+
+.breadcrumb-item.active {
+  color: var(--secondary-color);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.banner-wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.banner-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+/*--------------------------------------------------------------
+# Service Overview Section
+--------------------------------------------------------------*/
+.overview-content {
+  padding-right: 30px;
+}
+
+.overview-text {
+  font-size: 16px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.overview-features {
+  margin-top: 30px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(0, 86, 179, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.feature-item:hover .feature-icon {
+  background-color: var(--primary-color);
+}
+
+.feature-icon i {
+  font-size: 24px;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.feature-item:hover .feature-icon i {
+  color: var(--white);
+}
+
+.feature-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.feature-text p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+.overview-image {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.overview-image img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.experience-badge {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 150px;
+  height: 150px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  animation: pulse 2s infinite;
+}
+
+.badge-content {
+  text-align: center;
+  color: var(--white);
+}
+
+.badge-number {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  display: block;
+}
+
+.badge-text {
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 86, 179, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 86, 179, 0);
+  }
+}
+
+/*--------------------------------------------------------------
+# Service Details Section
+--------------------------------------------------------------*/
+.detail-card {
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  height: 100%;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(0, 86, 179, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.detail-card:hover .card-icon {
+  background-color: var(--primary-color);
+}
+
+.card-icon i {
+  font-size: 30px;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.detail-card:hover .card-icon i {
+  color: var(--white);
+}
+
+.card-content {
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.card-text {
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-list li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text-light);
+  display: flex;
+  align-items: flex-start;
+}
+
+.card-list li i {
+  color: var(--secondary-color);
+  margin-right: 10px;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+/*--------------------------------------------------------------
+# Portfolio Section
+--------------------------------------------------------------*/
+.portfolio-gallery {
+  margin-top: 30px;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  margin-bottom: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 68, 148, 0.9));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.overlay-content {
+  text-align: center;
+  color: var(--white);
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+.portfolio-item:hover .overlay-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.overlay-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.overlay-content p {
+  font-size: 14px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.overlay-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--white);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.overlay-icon:hover {
+  background-color: var(--secondary-color);
+  color: var(--white);
+}
+
+/*--------------------------------------------------------------
+# Why Choose Us Section
+--------------------------------------------------------------*/
+.why-choose-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+}
+
+.why-choose-image img {
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.why-choose-image:hover img {
+  transform: scale(1.05);
+}
+
+.choose-list {
+  margin-top: 30px;
+}
+
+.choose-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.choose-icon {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 86, 179, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.choose-item:hover .choose-icon {
+  background-color: var(--primary-color);
+}
+
+.choose-icon i {
+  font-size: 20px;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.choose-item:hover .choose-icon i {
+  color: var(--white);
+}
+
+.choose-text h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--dark-color);
+}
+
+.choose-text p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 1199px) {
+  .banner-title {
+    font-size: 2.5rem;
+  }
+
+  .experience-badge {
+    width: 120px;
+    height: 120px;
+  }
+
+  .badge-number {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-banner {
+    height: 350px;
+  }
+
+  .banner-title {
+    font-size: 2rem;
+  }
+
+  .overview-content {
+    padding-right: 0;
+    margin-bottom: 50px;
+  }
+
+  .experience-badge {
+    width: 100px;
+    height: 100px;
+    bottom: -20px;
+    right: -20px;
+  }
+
+  .badge-number {
+    font-size: 30px;
+  }
+
+  .badge-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-banner {
+    height: 300px;
+  }
+
+  .banner-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .feature-icon {
+    margin: 0 auto 15px;
+  }
+
+  .choose-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .choose-icon {
+    margin: 0 auto 15px;
+  }
+
+  .experience-badge {
+    width: 80px;
+    height: 80px;
+    bottom: -15px;
+    right: -15px;
+  }
+
+  .badge-number {
+    font-size: 24px;
+  }
+
+  .badge-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .page-banner {
+    height: 250px;
+    margin-top: 76px;
+  }
+
+  .banner-title {
+    font-size: 1.5rem;
+  }
+
+  .breadcrumb-item {
+    font-size: 14px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+}

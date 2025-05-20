@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Basic -->
@@ -8,295 +8,1485 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+  <meta name="keywords" content="Halsey J Limited, services, advertising, cleaning, consulting, IT solutions, landscaping" />
+  <meta name="description" content="Explore the comprehensive range of services offered by Halsey J Limited - From advertising to IT solutions." />
+  <meta name="author" content="Halsey J Limited" />
 
-  <title>Halsey J Limited</title>
+  <style>
+    /*--------------------------------------------------------------
+# Services Page Specific Styles
+--------------------------------------------------------------*/
+:root {
+  --primary-color: #0056b3;
+  --secondary-color: #004494;
+  --accent-color: #ff6b00;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+  --gray-color: #6c757d;
+  --border-color: #dee2e6;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+}
 
-  <!-- slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- font awesome style -->
-  <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-  <link rel="icon" href="images/hasley_logo-removebg-preview (1).png" type="image/png">
+body {
+  font-family: "Poppins", sans-serif;
+}
 
-  <!-- Custom styles for this template -->
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  font-family: "Playfair Display", serif;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--gray-color);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-bottom: 30px;
+}
+
+.section-badge {
+  display: inline-block;
+  background-color: rgba(255, 107, 0, 0.1);
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 6px 15px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.services-hero {
+  position: relative;
+  height: 600px;
+  background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  margin-top: 76px;
+  overflow: hidden;
+}
+
+.services-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(65, 61, 62, 0.85), rgba(17, 17, 16, 0.95));
+}
+
+.services-hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.services-hero-title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: "Playfair Display", serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.services-hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.services-hero-btn {
+  margin-top: 20px;
+}
+
+.wave-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.wave-bottom svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 80px;
+}
+
+/*--------------------------------------------------------------
+# Services Introduction
+--------------------------------------------------------------*/
+.services-intro-content {
+  padding-right: 30px;
+}
+
+.services-intro-text {
+  margin-bottom: 20px;
+  color: var(--gray-color);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.services-intro-image img {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.services-intro-image img:hover {
+  transform: scale(1.03);
+}
+
+/*--------------------------------------------------------------
+# Main Services Section
+--------------------------------------------------------------*/
+.service-card {
+  height: 400px;
+  perspective: 1000px;
+  margin-bottom: 30px;
+}
+
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.service-card:hover .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.service-card-front {
+  background-color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-back {
+  background-color: var(--primary-color);
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.service-icon {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 86, 179, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.service-icon i {
+  font-size: 36px;
+  color: var(--primary-color);
+}
+
+.service-title {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.service-description {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+}
+
+.service-back-content {
+  text-align: center;
+}
+
+.service-back-content h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.service-back-content p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/*--------------------------------------------------------------
+# Service Process Section
+--------------------------------------------------------------*/
+.process-timeline {
+  position: relative;
+  padding: 30px 0;
+}
+
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background-color: var(--border-color);
+}
+
+.process-step {
+  position: relative;
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.process-step:last-child {
+  margin-bottom: 0;
+}
+
+.process-icon {
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  margin-right: 30px;
+  flex-shrink: 0;
+}
+
+.process-icon i {
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+.process-number {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.process-content {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  flex-grow: 1;
+}
+
+.process-title {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+.process-description {
+  color: var(--gray-color);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# Featured Projects Section
+--------------------------------------------------------------*/
+.project-card {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 30px;
+}
+
+.project-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-category {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  transition-delay: 0.1s;
+}
+
+.project-title {
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: center;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  transition-delay: 0.2s;
+}
+
+.project-link {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+  transition-delay: 0.3s;
+}
+
+.project-link:hover {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+.project-card:hover .project-category,
+.project-card:hover .project-title,
+.project-card:hover .project-link {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/*--------------------------------------------------------------
+# CTA Section
+--------------------------------------------------------------*/
+.cta-section {
+  position: relative;
+  padding: 100px 0;
+  background-image: url("https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.cta-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 86, 179, 0.85), rgba(0, 68, 148, 0.95));
+}
+
+.cta-title {
+  color: #fff;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+}
+
+.cta-text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-buttons {
+  position: relative;
+  z-index: 1;
+}
+
+/*--------------------------------------------------------------
+# Testimonials Section
+--------------------------------------------------------------*/
+.testimonial-slider {
+  margin-top: 50px;
+}
+
+.testimonial-item {
+  margin: 15px;
+}
+
+.testimonial-content {
+  background-color: #fff;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.testimonial-content:hover {
+  transform: translateY(-10px);
+}
+
+.testimonial-text {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.testimonial-text i {
+  font-size: 24px;
+  color: var(--primary-color);
+  opacity: 0.3;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.testimonial-text p {
+  font-style: italic;
+  color: var(--gray-color);
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.author-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.author-info h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.author-info p {
+  color: var(--gray-color);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# FAQ Section
+--------------------------------------------------------------*/
+.accordion-item {
+  margin-bottom: 15px;
+  border: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+}
+
+.accordion-button {
+  padding: 20px 25px;
+  font-weight: 600;
+  color: var(--dark-color);
+  background-color: #fff;
+  border: none;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--primary-color);
+  background-color: #fff;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230056b3'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.accordion-body {
+  padding: 20px 25px;
+  color: var(--gray-color);
+}
+
+/*--------------------------------------------------------------
+# Responsive Styles
+--------------------------------------------------------------*/
+@media (max-width: 991px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .services-hero {
+    height: 500px;
+  }
+
+  .services-hero-title {
+    font-size: 3rem;
+  }
+
+  .services-intro-content {
+    padding-right: 0;
+    margin-bottom: 40px;
+  }
+
+  .process-timeline::before {
+    left: 40px;
+  }
+
+  .process-step {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 80px;
+  }
+
+  .process-icon {
+    position: absolute;
+    left: 0;
+    margin-right: 0;
+  }
+
+  .process-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .section-padding {
+    padding: 50px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .services-hero {
+    height: 400px;
+  }
+
+  .services-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .services-hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .service-card {
+    height: 350px;
+  }
+
+  .cta-title {
+    font-size: 2rem;
+  }
+
+  .cta-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .cta-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .cta-buttons .btn.me-3 {
+    margin-right: 0 !important;
+  }
+}
+
+  </style>
+
+  <title>Our Services - Halsey J Limited</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <!-- Custom styles -->
   <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
+  <link href="css/service-style.css" rel="stylesheet" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="images/hasley_logo-removebg-preview (1).png" type="image/png">
 </head>
 
 <body>
-  <div class="hero_area">
-    <!-- header section strats -->
-    <!-- <header class="header_section">
-      <div class="header_top">
-        <div class="container-fluid">
-          <div class="contact_nav">
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Call : +01 123455678990
-              </span>
-            </a>
-            <a href="">
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-              <span>
-                Email : demo@gmail.com
-              </span>
-            </a>
-          </div>
-        </div>
-      </div> -->
-      <div class="header_bottom">
-        <div class="container-fluid">
-          <nav class="navbar navbar-expand-lg custom_nav-container ">
-            <a class="navbar-brand" href="index.html">
-              <img src="./images/hasley_logo-removebg-preview (1).png" alt="" height="20">
-              <span>
-                Halsey J Limited
-    
-              </span>
-            </a>
-    
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class=""> </span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="service.html">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-
-  <!-- service section -->
-
-  <section class="service_section layout_padding">
-    
-    <div class="container ">
-      <div class="heading_container heading_center">
-        <h2> Our Services </h2>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-md-4 mx-auto">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/badge-ad.svg" alt="" height="60"/>
-            </div>
-
-            <div class="detail-box">
-              
-              <h5>
-                Advertising and Installation of Advert Boxes
-              </h5>
-              <a href="advertising.html"><button class="b-service">READ MORE</button></a>
-              
-            </div>
-          </div>
-          
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-         <div class="box ">
-          <div class="img-box">
-            <img src="./images/buildings.svg" alt="" height="60"/>
-          </div>
-          <div class="detail-box">
-            <h5>
-              General Supplies and supply of Office Items
-            </h5>
-            <a href="supplies.html"><button class="b-service">READ MORE</button></a>
-          </div>
-        </div>
-          
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-         <div class="box ">
-            <div class="img-box">
-              <img src="./images/sunset.svg" alt="" height="60"/>
-            </div>
-            <div class="detail-box">
-              <h5>
-                Environmental Beautification and Landscaping
-              </h5>
-              <a href="environmental.html"><button class="b-service">READ MORE</button></a>
-            </div>
-          </div>
-       
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-         <div class="box ">
-            <div class="img-box">
-              <img src="images/printer-svgrepo-com.svg" alt="" />
-            </div>
-            <div class="detail-box">
-              <h5>
-                Printing and Branding Services
-              </h5>
-              <a href="printing.html"><button class="b-service">READ MORE</button></a>
-            </div>
-          </div>
-       
-        </div>
-
-        
-          <div class="col-sm-6 col-md-4 mx-auto">
-           <div class="box">
-              <div class="img-box">
-                <img src="./images/browser-svgrepo-com.svg" alt="" />
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Consulting and IT Solutions
-                </h5>
-                <a href="consulting.html"><button class="b-service">READ MORE</button></a>
-              </div>
-            </div>
-         
-         
-        </div>
-        <div class="col-sm-6 col-md-4 mx-auto">
-           <div class="box ">
-              <div class="img-box">
-                <img src="./images/trash.svg" alt="" height="60" />
-              </div>
-              <div class="detail-box">
-                <h5>
-                  Cleaning and Fumigation Services
-                </h5>
-                
-                <a href="cleaning.html"><button class="b-service">READ MORE</button></a>
-              </div>
-            </div>
-          </div>  
-      </div>
-      <hr>
-      <!-- <div class="btn-box">
-        <a href="">
-          View More
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="./images/hasley_logo-removebg-preview (1).png" alt="Halsey J Limited Logo" class="logo-img">
+          <span class="logo-text">Halsey J Limited</span>
         </a>
-      </div>
-    </div> -->
-  </section>
-  <!-- end service section -->
 
-  <!-- info section -->
-  <section class="info_section ">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="service.html">Services <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="services-hero">
+    <div class="services-hero-overlay"></div>
     <div class="container">
-      <h4>
-        Get In Touch
-      </h4>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="services-hero-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="services-hero-title">Our Services</h1>
+            <p class="services-hero-subtitle">Comprehensive solutions tailored to your needs</p>
+            <div class="services-hero-btn">
+              <a href="#services" class="btn btn-primary btn-lg">Explore Services</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-bottom">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Services Introduction -->
+  <section class="services-intro section-padding" id="services">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+          <div class="services-intro-content">
+            <div class="section-badge">WHAT WE OFFER</div>
+            <h2 class="section-title">Comprehensive Solutions for Your Business</h2>
+            <div class="title-underline"></div>
+            <p class="services-intro-text">
+              At Halsey J Limited, we offer a diverse range of high-quality services designed to meet your business needs. From environmental beautification to IT solutions, our experienced team delivers excellence in every project we undertake.
+            </p>
+            <p class="services-intro-text">
+              Our commitment to quality, innovation, and customer satisfaction has made us a trusted partner for businesses across Nigeria. Explore our services below and discover how we can help your business thrive.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+          <div class="services-intro-image">
+            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Business team discussing services" class="img-fluid rounded shadow">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Services Section -->
+  <section class="main-services section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Our Core Services</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Discover our range of specialized services designed to meet your business needs
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <!-- Service 1 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-ad"></i>
+                </div>
+                <h3 class="service-title">Advertising & Installation</h3>
+                <p class="service-description">
+                  Strategic advertising solutions and professional installation of advert boxes
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>Advertising & Installation</h3> -->
+                  <p>We provide comprehensive advertising solutions including design, production, and strategic placement of advertisements. Our team specializes in the installation of advert boxes and billboards that maximize visibility and impact.</p>
+                  <a href="advertising.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service 2 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-boxes"></i>
+                </div>
+                <h3 class="service-title">General Supplies</h3>
+                <p class="service-description">
+                  Reliable supply of office items and general business supplies
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>General Supplies</h3> -->
+                  <p>We offer a wide range of office supplies and equipment to keep your business running smoothly. From stationery and furniture to electronics and specialized equipment, we ensure timely delivery and competitive pricing.</p>
+                  <a href="supplies.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service 3 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-tree"></i>
+                </div>
+                <h3 class="service-title">Environmental Beautification</h3>
+                <p class="service-description">
+                  Professional landscaping and environmental enhancement services
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>Environmental Beautification</h3> -->
+                  <p>Our landscaping experts transform outdoor spaces into beautiful, functional environments. We offer comprehensive services including garden design, planting, maintenance, and environmental enhancement for commercial and residential properties.</p>
+                  <a href="environmental.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service 4 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-print"></i>
+                </div>
+                <h3 class="service-title">Printing & Branding</h3>
+                <p class="service-description">
+                  High-quality printing services and comprehensive branding solutions
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>Printing & Branding</h3> -->
+                  <p>We deliver exceptional printing services for all your business needs, from business cards and brochures to large format printing. Our branding experts help create and maintain a consistent, professional image for your business.</p>
+                  <a href="printing.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service 5 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3 class="service-title">Consulting & IT Solutions</h3>
+                <p class="service-description">
+                  Expert business consulting and innovative IT solutions
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>Consulting & IT Solutions</h3> -->
+                  <p>Our consulting team provides strategic guidance to help your business grow and thrive. We also offer comprehensive IT solutions including software development, system integration, network management, and technical support.</p>
+                  <a href="consulting.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Service 6 -->
+        <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+          <div class="service-card">
+            <div class="service-card-inner">
+              <div class="service-card-front">
+                <div class="service-icon">
+                  <i class="fas fa-broom"></i>
+                </div>
+                <h3 class="service-title">Cleaning & Fumigation</h3>
+                <p class="service-description">
+                  Professional cleaning and pest control services for businesses
+                </p>
+              </div>
+              <div class="service-card-back">
+                <div class="service-back-content">
+                  <!-- <h3>Cleaning & Fumigation</h3> -->
+                  <p>We provide comprehensive cleaning services for commercial and residential properties, ensuring a healthy and hygienic environment. Our fumigation services effectively eliminate pests and prevent infestations using safe, environmentally friendly methods.</p>
+                  <a href="cleaning.html" class="btn btn-light">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process Section -->
+  <section class="service-process section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Our Service Process</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            How we deliver exceptional results for every project
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="process-timeline">
+            <!-- Step 1 -->
+            <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+              <div class="process-icon">
+                <i class="fas fa-comments"></i>
+                <span class="process-number">01</span>
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">Consultation</h3>
+                <p class="process-description">
+                  We begin with a thorough consultation to understand your specific needs, goals, and expectations. This allows us to tailor our services to your unique requirements.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+              <div class="process-icon">
+                <i class="fas fa-clipboard-list"></i>
+                <span class="process-number">02</span>
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">Planning & Strategy</h3>
+                <p class="process-description">
+                  Our team develops a comprehensive plan and strategy, outlining the scope, timeline, resources, and deliverables for your project. We ensure every detail is considered.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+              <div class="process-icon">
+                <i class="fas fa-cogs"></i>
+                <span class="process-number">03</span>
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">Implementation</h3>
+                <p class="process-description">
+                  We execute the plan with precision and expertise, leveraging our skilled team and resources to deliver high-quality results. Regular updates keep you informed throughout the process.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 4 -->
+            <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+              <div class="process-icon">
+                <i class="fas fa-check-circle"></i>
+                <span class="process-number">04</span>
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">Quality Assurance</h3>
+                <p class="process-description">
+                  We conduct thorough quality checks to ensure all deliverables meet our high standards and your expectations. Any necessary adjustments are made at this stage.
+                </p>
+              </div>
+            </div>
+            
+            <!-- Step 5 -->
+            <div class="process-step" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+              <div class="process-icon">
+                <i class="fas fa-handshake"></i>
+                <span class="process-number">05</span>
+              </div>
+              <div class="process-content">
+                <h3 class="process-title">Delivery & Follow-up</h3>
+                <p class="process-description">
+                  We deliver the completed project and conduct a follow-up to ensure your satisfaction. Our commitment to your success extends beyond project completion.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects Section -->
+  <!-- <section class="featured-projects section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Some of our recent work that showcases our expertise and quality
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5"> -->
+        <!-- Project 1 -->
+        <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="100">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Office Interior Project" class="img-fluid">
+              <div class="project-overlay">
+                <div class="project-category">Office Design</div>
+                <h3 class="project-title">Corporate Office Renovation</h3>
+                <a href="#" class="project-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- Project 2 -->
+        <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Company Branding Project" class="img-fluid">
+              <div class="project-overlay">
+                <div class="project-category">Branding</div>
+                <h3 class="project-title">Complete Corporate Rebrand</h3>
+                <a href="#" class="project-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        
+        <!-- Project 3 -->
+        <!-- <div class="col-lg-4 col-md-6 mb-4" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="300">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1551651653-c5dcb914d809?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Landscape Design Project" class="img-fluid">
+              <div class="project-overlay">
+                <div class="project-category">Landscaping</div>
+                <h3 class="project-title">Commercial Garden Design</h3>
+                <a href="#" class="project-link">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center" data-aos="fade-up" data-aos-duration="1000">
+          <h2 class="cta-title">Ready to Work With Us?</h2>
+          <p class="cta-text">
+            Contact us today to discuss how our services can benefit your business. Our team is ready to provide the solutions you need.
+          </p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary btn-lg me-3">Contact Us</a>
+            <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <!-- <section class="testimonials-section section-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">What Our Clients Say</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Hear from businesses that have experienced our services
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-10 mx-auto">
+          <div class="testimonial-slider" data-aos="fade-up" data-aos-duration="1000"> -->
+            <!-- Testimonial 1 -->
+            <!-- <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="testimonial-text">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Halsey J Limited transformed our outdoor space into an oasis of beauty. Their expertise in Environmental Beautification is evident in every detail, fostering a welcoming environment for our staff and clients.
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Tunde Afolabi">
+                  </div>
+                  <div class="author-info">
+                    <h4>Tunde Afolabi</h4>
+                    <p>CEO, TechNova Solutions</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- Testimonial 2 -->
+            <!-- <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="testimonial-text">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Our partnership with Halsey J Limited for Corporate Cleaning and Fumigation service was a game changer. Their meticulous approach maintains a spotless, productive workplace, ensuring that our clients receive the highest standard of service.
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-image">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Chinwe Eze">
+                  </div>
+                  <div class="author-info">
+                    <h4>Chinwe Eze</h4>
+                    <p>Operations Manager, Global Finance</p>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- Testimonial 3 -->
+            <!-- <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="testimonial-text">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    Partnering with Halsey J Limited for our printing and branding needs has been a game-changer for our marketing strategy. Their creative designs not only captured the essence of our brand but also conveyed our message with clarity and impact.
+                  </p>
+                </div>
+                <div class="testimonial-author">
+                  <div class="author-image">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Folake Williams">
+                  </div>
+                  <div class="author-info">
+                    <h4>Folake Williams</h4>
+                    <p>Marketing Director, Sunrise Enterprises</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- FAQ Section -->
+  <section class="faq-section section-padding bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center" data-aos="fade-up" data-aos-duration="800">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="title-underline mx-auto"></div>
+          <p class="section-subtitle">
+            Find answers to common questions about our services
+          </p>
+        </div>
+      </div>
+      
+      <div class="row mt-5">
+        <div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-duration="1000">
+          <div class="accordion" id="faqAccordion">
+            <!-- FAQ Item 1 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  What areas do you serve?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  We primarily serve clients throughout Nigeria, with a focus on Lagos, Abuja, and Ogun State. However, we can accommodate projects in other locations based on client needs and project scope.
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 2 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  How do you ensure quality in your services?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Quality is at the core of everything we do. We maintain strict quality control processes, employ skilled professionals, use premium materials and equipment, and conduct regular training for our team. We also implement a thorough quality assurance process for every project to ensure it meets our high standards before delivery.
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 3 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  What is your typical project timeline?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Project timelines vary depending on the scope, complexity, and specific requirements of each project. During our initial consultation, we'll provide a detailed timeline estimate for your specific project. We pride ourselves on meeting deadlines and keeping our clients informed about progress throughout the project lifecycle.
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 4 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  Do you offer customized service packages?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Yes, we understand that every client has unique needs. We offer fully customizable service packages tailored to your specific requirements and budget. Our team will work closely with you to develop a solution that addresses your particular challenges and objectives.
+                </div>
+              </div>
+            </div>
+            
+            <!-- FAQ Item 5 -->
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                  How can I request a quote for your services?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  You can request a quote by contacting us through our website, email, or phone. We'll schedule an initial consultation to understand your needs, after which we'll provide a detailed quote outlining the scope of work, timeline, and cost. We strive to make this process as transparent and straightforward as possible.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <!-- <section class="info-section">
+    <div class="container">
+      <h4 class="info-title" data-aos="fade-up" data-aos-duration="800">Get In Touch</h4>
       <div class="row">
         <div class="col-lg-10 mx-auto">
-          <div class="info_items">
+          <div class="info-items">
             <div class="row">
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box ">
-                      <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    </div>
+               Address -->
+              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="info-content">
                     <p>
                       156 Abiola Way, Opp IBD Hotel, Lele, Abeokuta, Ogun State <br>
                       124 Oyadiran Estate, Sabo-Yaba, Lagos, Nigeria
                     </p>
                   </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box ">
-                      <i class="fa fa-phone" aria-hidden="true"></i>
-                    </div>
+                </div>
+              </div> -->
+              
+              <!-- Phone -->
+              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="info-content">
                     <p>
-                      +2348052232621 , +2348037192792, +2348140929801
+                      +2348052232621 <br> +2348037192792 <br> +2348140929801
                     </p>
                   </div>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="">
-                  <div class="item ">
-                    <div class="img-box">
-                      <i class="fa fa-envelope" aria-hidden="true"></i>
-                    </div>
+                </div>
+              </div> -->
+              
+              <!-- Email -->
+              <!-- <div class="col-md-4" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+                <div class="info-item">
+                  <div class="info-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="info-content">
                     <p>
                       info@halsyjlimited.com
                     </p>
                   </div>
-                </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="social-box">
-      <h4>
-        Follow Us
-      </h4>
-      <div class="box">
-        <a href="">
-          <i class="fa fa-facebook" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-youtube" aria-hidden="true"></i>
-        </a>
-        <a href="">
-          <i class="fa fa-instagram" aria-hidden="true"></i>
-        </a>
+    </div> -->
+    
+    <!-- Social Media -->
+    <!-- <div class="social-box" data-aos="fade-up" data-aos-duration="800">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
       </div>
     </div>
-  </section>
+  </section> -->
 
-
-
-  <!-- end info_section -->
-
-  <!-- footer section -->
-  <footer class="footer_section">
+  <!-- Footer Section -->
+  <footer class="footer-section">
     <div class="container">
       <p>
         &copy; <span id="displayDateYear"></span> All Rights Reserved By
-        <a href="https://html.design/">© Halsey J Limited</a>
+        <a href="#">Halsey J Limited</a>
       </p>
     </div>
   </footer>
-  <!-- footer section -->
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
-  </script>
+  <!-- Scripts -->
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+  
+  <!-- AOS Animation Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <!-- Slick Slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  
+  <!-- Custom JS -->
   <script src="js/custom.js"></script>
-  <!-- Google Map -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
-  <!-- End Google Map -->
+  <script src="js/service.js"></script>
 
+  <script>
+    // Import AOS Animation Library
+import AOS from "aos"
+import $ from "jquery"
 
+// Initialize AOS Animation Library
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize AOS
+  AOS.init({
+    duration: 1000,
+    once: true,
+    mirror: false,
+  })
+
+  // Initialize Testimonial Slider
+  $(".testimonial-slider").slick({
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  })
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault()
+
+      const targetId = this.getAttribute("href")
+      const targetElement = document.querySelector(targetId)
+
+      if (targetElement) {
+        const headerHeight = document.querySelector(".header").offsetHeight
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight
+
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "smooth",
+        })
+      }
+    })
+  })
+
+  // Add hover effect to process steps
+  const processSteps = document.querySelectorAll(".process-step")
+
+  processSteps.forEach((step) => {
+    step.addEventListener("mouseenter", function () {
+      const icon = this.querySelector(".process-icon i")
+      icon.style.transform = "scale(1.2)"
+      icon.style.color = "#ff6b00"
+    })
+
+    step.addEventListener("mouseleave", function () {
+      const icon = this.querySelector(".process-icon i")
+      icon.style.transform = "scale(1)"
+      icon.style.color = "#0056b3"
+    })
+  })
+
+  // Parallax effect for CTA section
+  window.addEventListener("scroll", () => {
+    const ctaSection = document.querySelector(".cta-section")
+    if (ctaSection) {
+      const scrollPosition = window.pageYOffset
+      const sectionPosition = ctaSection.offsetTop
+      const sectionHeight = ctaSection.offsetHeight
+
+      if (scrollPosition > sectionPosition - window.innerHeight && scrollPosition < sectionPosition + sectionHeight) {
+        const yPos = -(scrollPosition - sectionPosition) / 5
+        ctaSection.style.backgroundPosition = `center ${yPos}px`
+      }
+    }
+  })
+
+  // Display current year in footer
+  document.getElementById("displayDateYear").textContent = new Date().getFullYear()
+})
+
+  </script>
 </body>
 
 </html>
